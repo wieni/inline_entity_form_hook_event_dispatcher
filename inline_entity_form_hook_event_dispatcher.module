@@ -1,0 +1,19 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+
+use Drupal\hook_event_dispatcher\Manager\HookEventDispatcherManagerInterface;
+use Drupal\inline_entity_form_hook_event_dispatcher\Event\Form\FormBaseAlterEvent;
+
+/**
+ * Implements hook
+ *
+ *
+ * _inline_entity_form_entity_form_alter().
+ */
+function inline_entity_form_hook_event_dispatcher_inline_entity_form_entity_form_alter(&$entity_form, FormStateInterface $form_state) {
+    /** @var HookEventDispatcherManagerInterface $manager */
+    $manager = Drupal::service('hook_event_dispatcher.manager');
+    $event = new FormBaseAlterEvent($entity_form, $form_state, 'inline_entity_form', 'inline_entity_form');
+    $manager->register($event);
+}
