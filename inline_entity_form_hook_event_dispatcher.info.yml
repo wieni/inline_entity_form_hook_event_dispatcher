@@ -1,7 +1,7 @@
 name: Inline Entity Form Hook Event Dispatcher
 type: module
 description: Registers event dispatchers for several inline entity forms
-core_version_requirement: ^9.3
+core_version_requirement: ^9.3 || ^10.0
 package: Hook events
 dependencies:
     - hook_event_dispatcher:hook_event_dispatcher
